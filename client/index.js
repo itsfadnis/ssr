@@ -1,3 +1,7 @@
-import ReactDOM from 'react-dom';
+import React from 'react';
+import { render } from 'react-dom';
+import App from '../isomorphic/components/app';
 
-ReactDOM.render('Yolo world', document.querySelector('#app'));
+render(<App { ...window.APP_STATE } />, document.querySelector('#app'));
+
+delete window.APP_STATE;
