@@ -8,10 +8,12 @@ gulp.task('serve:assets', function() {
   var port = config.devServer.port;
 
   // https://webpack.github.io/docs/webpack-dev-server.html#inline-mode-with-node-js-api
-  config.entry = [
-    'webpack-dev-server/client?http://' + host + ':' + port,
-    config.entry
-  ];
+  Object.keys(config.entry).forEach(function(key) {
+    config.entry[key] = [
+      'webpack-dev-server/client?http://' + host + ':' + port,
+      config.entry[key]
+    ]
+  });
 
   return new WebpackDevServer(
     webpack(config), config.devServer

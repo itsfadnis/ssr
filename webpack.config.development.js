@@ -1,18 +1,29 @@
 var webpack = require('webpack');
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: './client/index.js',
+  entry: {
+    app: './client/index.js'
+  },
   output: {
-    filename: 'client.js',
-    path: path.resolve(__dirname, 'dist', 'javascripts'),
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist'),
     publicPath: 'http://localhost:8081/assets/'
   },
   module: {
-    rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
-    ]
+    rules: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader'
+    }, {
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract('css-loader!sass-loader')
+    }]
   },
+  plugins: [
+    new ExtractTextPlugin('[name].css')
+  ],
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
     publicPath: 'http://localhost:8081/assets/',

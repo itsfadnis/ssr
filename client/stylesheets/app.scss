@@ -1,0 +1,21 @@
+.todos {
+  $todo-text-color: #000;
+  $completed-todo-text-color: #999;
+
+  list-style-type: none;
+  padding-left: 0;
+
+  > .todo {
+    color: $todo-text-color;
+    cursor: default;
+
+    &.todo-completed {
+      color: $completed-todo-text-color;
+      text-decoration: line-through;
+    }
+
+    > .todo-toggle {
+      margin-right: 5px;
+    }
+  }
+}

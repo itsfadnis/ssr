@@ -3,7 +3,7 @@ import Todo from './todo';
 
 export default ({ todos, onTodoClick }) => {
   return (
-    <ul>
+    <ul className="todos">
       {
         todos.map((todo) =>
           <Todo

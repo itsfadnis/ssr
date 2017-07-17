@@ -21,6 +21,7 @@ export default class TodoForm extends React.Component {
         onSubmit={ this.handleSubmit }
       >
         <input
+          id="new-todo"
           placeholder="New todo"
           required
           ref={(node) => { this.input = node; }}
