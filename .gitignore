@@ -1,2 +1,4 @@
 dist/
 node_modules/
+cypress/integration/example_spec.js
+cypress/fixtures/example.json
