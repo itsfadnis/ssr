@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 
 gulp.task('serve:assets', function() {
-  var config = require('./webpack.config.development');
+  var config = require('./webpack.dev');
   var host = config.devServer.host;
   var port = config.devServer.port;
 

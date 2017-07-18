@@ -6,11 +6,6 @@ module.exports = {
   entry: {
     app: './client/index.js'
   },
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: 'http://localhost:8081/assets/'
-  },
   module: {
     rules: [{
       test: /\.js$/,
